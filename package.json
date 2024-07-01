@@ -10,11 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-accordion": "^1.2.0",
+    "clsx": "^2.1.1",
+    "clx": "^1.0.0",
+    "highlight.js": "^11.9.0",
+    "lucide-react": "^0.399.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sass": "^1.77.6"
+    "sass": "^1.77.6",
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
+    "@types/node": "^20.14.9",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
