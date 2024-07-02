@@ -5,7 +5,7 @@ import {
     TableRowItem
 } from '../components/Table';
 
-export default DescriptiveCodeTable = ({children}) => {
+const DescriptiveCodeTable = ({children}) => {
     
     const modifyCodeblocksDeeply = (children) => {
         return React.Children.map(children, (child) => {
@@ -88,3 +88,5 @@ export default DescriptiveCodeTable = ({children}) => {
         </Table>
     </>    
 }
+
+export default DescriptiveCodeTable;
