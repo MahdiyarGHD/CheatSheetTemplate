@@ -96,46 +96,55 @@ const Home = () => {
             </TableRow>
         </DescriptiveCodeTable>
     </MasonryItem>,
-        <MasonryItem title="عباس">
-        <p className="pt-2">
-            Blade یک تمپلیت انجین ساده و درعین حال قدرتمند است که در لاراول گنجانده شده است.
-        </p>
-        
-        <Codeblock language="php">
-        {`
-        echo "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppphp";
-        echo "php"; 
-        echo "php";
-        `}             
-        </Codeblock>
-        
-        <DescriptiveCodeTable>
-            <TableRow>
-                <TableRowItem>
-                 ویرایش محتوی یک فایل ( پارامتر اول آدرس فایل و پارامتر دوم محتوی ) 
-                </TableRowItem>
-                <TableRowItem>
-                    <Codeblock language="php">Storage::put('file.jpg', $contents);</Codeblock>
-                </TableRowItem>
-            </TableRow>
-            <TableRow>
-                <TableRowItem>
-                 ویرایش محتوی یک فایل ( پارامتر اول آدرس فایل و پارامتر دوم محتوی ) 
-                </TableRowItem>
-                <TableRowItem>
-                    <Codeblock language="php">Storage::put('file.jpg', $contents);</Codeblock>
-                </TableRowItem>
-            </TableRow>
-            <TableRow>
-                <TableRowItem>
-                 ویرایش محتوی یک فایل ( پارامتر اول آدرس فایل و پارامتر دوم محتوی ) 
-                </TableRowItem>
-                <TableRowItem>
-                    <Codeblock language="php">Storage::put('file.jpg', $contents);</Codeblock>
-                </TableRowItem>
-            </TableRow>
-        </DescriptiveCodeTable>
-    </MasonryItem>,
+            <MasonryItem title="فلکس">
+            <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                    <AccordionTrigger>آرتیسان</AccordionTrigger>
+                    <AccordionContent>
+                        <p>آرتیسان یک رابط خط فرمان است که در لاراول استفاده شده است.</p>
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                    <AccordionTrigger>دستورات امنیتی</AccordionTrigger>
+                    <AccordionContent>
+                        Yes. It adheres to the WAI-ARIA design pattern.
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3" isBarHidden={true}>
+                    <AccordionTrigger>تمپلیت‌انجین</AccordionTrigger>
+                    <AccordionContent>
+                        Yes. It adheres to the WAI-ARIA design pattern.
+                        <Codeblock language="php">
+                        {`
+                        echo "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppphp";
+                        echo "php"; 
+                        echo "php";
+                        `}
+                        </Codeblock> 
+
+                
+                    <Table columns={["ویژگی", "کلاس"]}>
+                        <TableRow>
+                            <TableRowItem dir="ltr" >
+                                <Codeblock hasHighlight={false}>table-layout: auto;</Codeblock>
+                            </TableRowItem>
+                            <TableRowItem classList="monospace">
+                                <Codeblock hasHighlight={false}>table-auto</Codeblock>
+                            </TableRowItem>
+                        </TableRow>
+                        <TableRow>
+                            <TableRowItem classList='text-right'>
+                            ویرایش محتوی یک فایل ( پارامتر اول آدرس فایل و پارامتر دوم محتوی ) 
+                            </TableRowItem>
+                            <TableRowItem>
+                                <Codeblock isLineNumberDisabled={true} language="php">{`Storage::put('file.jpg', $contents);`}</Codeblock>
+                            </TableRowItem>
+                        </TableRow>
+                    </Table>
+                    </AccordionContent>
+                </AccordionItem>
+                </Accordion>
+            </MasonryItem>,
         <MasonryItem title="علی">
         <p className="pt-2">
             Blade یک تمپلیت انجین ساده و درعین حال قدرتمند است که در لاراول گنجانده شده است.
