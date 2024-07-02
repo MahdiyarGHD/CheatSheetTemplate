@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
-import hljs from 'highlight.js';
+import hljs from 'highlight.js/lib/core';
 import '../lib/highlightjs/styles/github-dark.min.css';
+import php from 'highlight.js/lib/languages/php';
 
 const Codeblock = ({ hasHighlight = true, language = '', isLineNumberDisabled = false, children }) => {
     if (hasHighlight === false) 
@@ -11,6 +12,7 @@ const Codeblock = ({ hasHighlight = true, language = '', isLineNumberDisabled = 
     const codeRef = useRef(null);
   
   useEffect(() => {
+    hljs.registerLanguage('php', php);
     hljs.highlightElement(codeRef.current);
   }, []);
   
