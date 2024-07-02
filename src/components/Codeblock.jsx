@@ -1,23 +1,39 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import hljs from 'highlight.js';
 import '../lib/highlightjs/styles/github-dark.min.css';
-import php from "../lib/highlightjs/php.min.js";
 
-const Codeblock = ({language = '', children}) => {
-    useEffect(() => {
-        console.log(children);
-        hljs.registerLanguage('php', php);
-        hljs.highlightAll();
-      }, []);
+const Codeblock = ({ hasHighlight = true, language = '', isLineNumberDisabled = false, children }) => {
+    if (hasHighlight === false) 
+        return (<span className='font-[monospace]'>{children}</span>) 
     
-    return <>
-        <pre>
-            <code className={`bg-transparent text-left hljs language-` + language} dir='ltr'>
-                {children.replace(/(^\s+)|(^\n+)|(\n+$)/gm, '')}
-            </code>
-        </pre>
-        
-    </>    
-}
+    children = children.replace(/^\s*[\r\n]+|^\s+|\s+$/gm, '');
+
+    const codeRef = useRef(null);
+  
+  useEffect(() => {
+    hljs.highlightElement(codeRef.current);
+  }, []);
+  
+  const codeLines = children.split('\n');
+
+  return (
+    <div className="flex" dir='ltr'>
+      <div className={`line-numbers text-left select-none opacity-50 text-[0.78rem] mt-[0.95rem] ` + (isLineNumberDisabled ? `hidden` : ``)}>
+        {codeLines.map((_, index) => (
+          <span key={index} className="block">{index + 1}</span>
+        ))}
+      </div>
+      <pre className='overflow-auto'>
+        <code
+          ref={codeRef}
+          className={`font-[monospace] block bg-transparent hljs language-${language}`}
+          dir='ltr'
+        >
+          {children}
+        </code>
+      </pre>
+    </div>
+  );
+};
 
 export default Codeblock;

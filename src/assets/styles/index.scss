@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+$custom-scrollbar-bg: transparent;
+$custom-scrollbar-border: rgba(31,204,204,.63);
+$custom-scrollbar-thumb: #38bdf8;
+$custom-scrollbar-thumb-hover: #23789c;
+
 @layer base {
+
+  
     @font-face {
       font-family: 'Estedad';
       font-style: normal;
@@ -56,15 +63,54 @@
     grid-column: span 1;
     grid-row: span 1;
   }
-  
-  pre {
-    display: block;
-    font-family: monospace;
-    unicode-bidi: isolate;
-    white-space: pre;
-  }
     
   p {
     @apply text-[14px] mt-[2px] w-full text-justify font-light
   }
+  
+  
+  code {
+    counter-reset: line;
+    padding-bottom: 0px !important;
+  }
+  
+  code .line-number::before {
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    width: 2em;
+    margin-right: 0.5em;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 1rem;
+    height: 1rem;
+    background-color: $custom-scrollbar-bg
+  }
+
+  ::-webkit-scrollbar-track:vertical {
+    border-left: .0625rem solid $custom-scrollbar-border
+  }
+
+  ::-webkit-scrollbar-corner {
+    border-top: .0325rem solid $custom-scrollbar-border;
+    border-left: .0325rem solid $custom-scrollbar-border;
+    background-color: transparent
+  }
+
+  ::-webkit-scrollbar-thumb {
+    min-width: 3rem;
+    min-height: 3rem;
+    border-radius: 1rem;
+    border: .4rem solid transparent;
+    background-color: $custom-scrollbar-thumb;
+    background-clip: content-box;
+    -moz-background-clip: content;
+    -webkit-background-clip: content
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: $custom-scrollbar-thumb-hover
+  }
+  
 }

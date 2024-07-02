@@ -4,6 +4,12 @@ import MasonryContainer from "../components/MasonryContainer";
 import MasonryItem from "../components/MasonryItem";
 import '../assets/fonts/Icomoon/style.css';
 import Codeblock from "../components/Codeblock.jsx";
+import DescriptiveCodeTable from "../components/DescriptiveCodeTable.jsx";
+import {
+    Table,
+    TableRow,
+    TableRowItem
+} from '../components/Table';
 import {
     Accordion,
     AccordionContent,
@@ -38,22 +44,76 @@ const Home = () => {
                     <AccordionTrigger>تمپلیت‌انجین</AccordionTrigger>
                     <AccordionContent>
                         Yes. It adheres to the WAI-ARIA design pattern.
+                        <Codeblock language="php">
+                        {`
+                        echo "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppphp";
+                        echo "php"; 
+                        echo "php";
+                        `}
+                        </Codeblock> 
+
+                
+                    <Table columns={["ویژگی", "کلاس"]}>
+                        <TableRow>
+                            <TableRowItem dir="ltr" >
+                                <Codeblock hasHighlight={false}>table-layout: auto;</Codeblock>
+                            </TableRowItem>
+                            <TableRowItem classList="monospace">
+                                <Codeblock hasHighlight={false}>table-auto</Codeblock>
+                            </TableRowItem>
+                        </TableRow>
+                        <TableRow>
+                            <TableRowItem classList='text-right'>
+                            ویرایش محتوی یک فایل ( پارامتر اول آدرس فایل و پارامتر دوم محتوی ) 
+                            </TableRowItem>
+                            <TableRowItem>
+                                <Codeblock isLineNumberDisabled={true} language="php">{`Storage::put('file.jpg', $contents);`}</Codeblock>
+                            </TableRowItem>
+                        </TableRow>
+                    </Table>
                     </AccordionContent>
                 </AccordionItem>
                 </Accordion>
             </MasonryItem>
             <MasonryItem title="فلکس">
                 <p className="pt-2">
-                Blade یک تمپلیت انجین ساده و درعین حال قدرتمند است که در لاراول گنجانده شده است.
+                    Blade یک تمپلیت انجین ساده و درعین حال قدرتمند است که در لاراول گنجانده شده است.
                 </p>
                 
                 <Codeblock language="php">
                 {`
-                echo "php";
+                echo "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppphp";
                 echo "php"; 
                 echo "php";
-                `}
+                `}             
                 </Codeblock>
+                
+                <DescriptiveCodeTable>
+                    <TableRow>
+                        <TableRowItem>
+                         ویرایش محتوی یک فایل ( پارامتر اول آدرس فایل و پارامتر دوم محتوی ) 
+                        </TableRowItem>
+                        <TableRowItem>
+                            <Codeblock language="php">Storage::put('file.jpg', $contents);</Codeblock>
+                        </TableRowItem>
+                    </TableRow>
+                    <TableRow>
+                        <TableRowItem>
+                         ویرایش محتوی یک فایل ( پارامتر اول آدرس فایل و پارامتر دوم محتوی ) 
+                        </TableRowItem>
+                        <TableRowItem>
+                            <Codeblock language="php">Storage::put('file.jpg', $contents);</Codeblock>
+                        </TableRowItem>
+                    </TableRow>
+                    <TableRow>
+                        <TableRowItem>
+                         ویرایش محتوی یک فایل ( پارامتر اول آدرس فایل و پارامتر دوم محتوی ) 
+                        </TableRowItem>
+                        <TableRowItem>
+                            <Codeblock language="php">Storage::put('file.jpg', $contents);</Codeblock>
+                        </TableRowItem>
+                    </TableRow>
+                </DescriptiveCodeTable>
             </MasonryItem>
         </MasonryContainer>
     </>
