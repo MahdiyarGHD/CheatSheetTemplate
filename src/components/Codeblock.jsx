@@ -7,7 +7,7 @@ const Codeblock = ({ hasHighlight = true, language = '', isLineNumberDisabled = 
     if (hasHighlight === false) 
         return (<span className='font-[monospace]'>{children}</span>) 
     
-    children = children.replace(/^\s*[\r\n]+|^\s+|\s+$/gm, '');
+    children = children.toString().replace(/^\s*[\r\n]+|^\s+|\s+$/gm, '');
 
     const codeRef = useRef(null);
   
